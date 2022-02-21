@@ -1,51 +1,64 @@
 // MyNewProject.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
-#include <stdio.h>
+#include "MyNewProject.h"
 
-#include <cstdlib>
-#include <ctime>
 
 //print string with size provided
 void printString(float *xString, int sizeOfString)
 {
+    std::cout << "String x: " << std::endl;
     for (int i = 0; i < sizeOfString; i++) {
-        std::cout << xString[i] << std::endl;
+        std::cout << xString[i] << " ";
     }
-        
+    std::cout << std::endl;
+}
+
+//print 2 string represent lists of 2D points A(x,y)
+void printString(float* xString, float* yString, int sizeOfString)
+{
+    std::cout << "List of points: " << std::endl;
+    for (int i = 0; i < sizeOfString; i++) {
+        std::cout << xString[i] << ", " << yString[i];
+    }
+    std::cout << std::endl;
+}
+
+//randomise value
+void randomString(float* xString, int sizeOfString) 
+{
+    
+
+    for (int i = 0; i < sizeOfString; i++) {
+        xString[i] = rand();
+    }
 }
 
 
+
+void processString(float* xString, int sizeOfString) {
+    randomString(xString, sizeOfString);
+    printString(xString, sizeOfString);
+}
+
+//Calculate distances between 2 points
+void calculateDistant(int xID, int yID) {
+
+}
 int main()
 {
+    //declare variable
+    float xString[STRINGLENGTH];
+    float yString[STRINGLENGTH];
 
-    float xString[10];
-    float yString[10];
-    
-    
-    for (int i = 0; i < 10; i++) {
-        std::cout << "input into x_string at " << i << ":";
-        std::cin >> xString[i];
-    }
 
+    srand(time(NULL));
+    processString(xString, STRINGLENGTH);
+    processString(yString, STRINGLENGTH);
     
 
-    std::cout << "Hello World!\n";
-    std::cout << "conac" << std::endl; 
-    printString(xString, 10);
+
+
     return 0;
 }
 
-
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
