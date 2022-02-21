@@ -2,12 +2,42 @@
 //
 
 #include <iostream>
+#include <stdio.h>
+
+#include <cstdlib>
+#include <ctime>
+
+//print string with size provided
+void printString(float *xString, int sizeOfString)
+{
+    for (int i = 0; i < sizeOfString; i++) {
+        std::cout << xString[i] << std::endl;
+    }
+        
+}
+
 
 int main()
 {
+
+    float xString[10];
+    float yString[10];
+    
+    
+    for (int i = 0; i < 10; i++) {
+        std::cout << "input into x_string at " << i << ":";
+        std::cin >> xString[i];
+    }
+
+    
+
     std::cout << "Hello World!\n";
     std::cout << "conac" << std::endl; 
+    printString(xString, 10);
+    return 0;
 }
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
